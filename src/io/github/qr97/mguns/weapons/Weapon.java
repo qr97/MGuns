@@ -1,4 +1,4 @@
-package io.github.qr97.mguns;
+package io.github.qr97.mguns.weapons;
 
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -10,6 +10,6 @@ public interface Weapon extends Listener {
 	
 	public String getName();
 	
-	public void onFire(PlayerInteractEvent event);
+	public void onMeleeAttack(PlayerInteractEvent event);
 	
 }

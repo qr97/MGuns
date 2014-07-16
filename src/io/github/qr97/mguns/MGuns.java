@@ -1,9 +1,12 @@
 package io.github.qr97.mguns;
 
 import io.github.qr97.mguns.commands.GetWeaponCommand;
+import io.github.qr97.mguns.listener.EntityShootBowListener;
 import io.github.qr97.mguns.listener.PlayerInteractListener;
 import io.github.qr97.mguns.util.StackComparator;
+import io.github.qr97.mguns.weapons.AutoBow;
 import io.github.qr97.mguns.weapons.TNTCannon;
+import io.github.qr97.mguns.weapons.Weapon;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +32,9 @@ public class MGuns extends JavaPlugin {
 		instance = this;
 		getCommand("getWeapon").setExecutor(new GetWeaponCommand());
 		getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
+		getServer().getPluginManager().registerEvents(new EntityShootBowListener(), this);
 		registerWeapon(new TNTCannon());
+		registerWeapon(new AutoBow());
 	}
 	
 	public void registerWeapon(Weapon weapon) {

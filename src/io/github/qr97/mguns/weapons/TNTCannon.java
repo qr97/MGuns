@@ -1,7 +1,5 @@
 package io.github.qr97.mguns.weapons;
 
-import io.github.qr97.mguns.Weapon;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +38,7 @@ public class TNTCannon implements Weapon {
 		return item;
 	}
 
-	public void onFire(PlayerInteractEvent event) {
+	public void onMeleeAttack(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 
 		if (event.getClickedBlock() != null

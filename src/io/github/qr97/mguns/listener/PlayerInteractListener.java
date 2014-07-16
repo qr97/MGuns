@@ -1,7 +1,7 @@
 package io.github.qr97.mguns.listener;
 
 import io.github.qr97.mguns.MGuns;
-import io.github.qr97.mguns.Weapon;
+import io.github.qr97.mguns.weapons.Weapon;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,7 +14,7 @@ public class PlayerInteractListener implements Listener {
 		Weapon weapon = MGuns.getInstance().getWeapon(event.getPlayer().getItemInHand());
 		
 		if(weapon != null) {
-			weapon.onFire(event);
+			weapon.onMeleeAttack(event);
 		}
 	}
 	
