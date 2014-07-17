@@ -1,5 +1,7 @@
 package io.github.qr97.mguns.weapons;
 
+import io.github.qr97.mguns.weapons.types.BowWeapon;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityShootBowEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
@@ -46,16 +47,13 @@ public class AutoBow implements BowWeapon {
 	}
 
 	@Override
-	public void onMeleeAttack(PlayerInteractEvent event) {}
-
-	@Override
 	public void onShoot(EntityShootBowEvent event) {
 		Player player = (Player) event.getEntity();
 		Arrow arrow = (Arrow)event.getProjectile();
 		
-		for(Entity entity : player.getNearbyEntities(7, 7, 7)) {
+		for(Entity entity : player.getNearbyEntities(15, 15, 15)) {
 			if(entity instanceof LivingEntity) {
-				Vector vector = entity.getLocation().toVector().subtract(player.getLocation().toVector());
+				Vector vector = entity.getLocation().toVector().subtract(arrow.getLocation().toVector());
 				arrow.setVelocity(vector);
 				break;
 			}

@@ -6,7 +6,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class StackComparator {
 	
 	public static boolean equals(ItemStack stack1, ItemStack stack2) {
-		if(!stack1.equals(stack2))
+		if(!stack1.isSimilar(stack2))
 			return false;
 		
 		ItemMeta meta1 = stack1.getItemMeta();

@@ -1,7 +1,7 @@
 package io.github.qr97.mguns.commands;
 
 import io.github.qr97.mguns.MGuns;
-import io.github.qr97.mguns.weapons.Weapon;
+import io.github.qr97.mguns.weapons.types.Weapon;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

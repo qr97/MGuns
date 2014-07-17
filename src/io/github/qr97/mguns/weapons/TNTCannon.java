@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class TNTCannon implements Weapon {
+public class TNTCannon implements ClickWeapon {
 
 	private final String name = "TNTCannon";
 	private ItemStack item;

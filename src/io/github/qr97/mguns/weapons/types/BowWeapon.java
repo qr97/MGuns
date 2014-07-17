@@ -1,4 +1,4 @@
-package io.github.qr97.mguns.weapons;
+package io.github.qr97.mguns.weapons.types;
 
 import org.bukkit.event.entity.EntityShootBowEvent;
 

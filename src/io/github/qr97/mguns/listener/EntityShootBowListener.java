@@ -1,8 +1,8 @@
 package io.github.qr97.mguns.listener;
 
 import io.github.qr97.mguns.MGuns;
-import io.github.qr97.mguns.weapons.BowWeapon;
-import io.github.qr97.mguns.weapons.Weapon;
+import io.github.qr97.mguns.weapons.types.BowWeapon;
+import io.github.qr97.mguns.weapons.types.Weapon;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
