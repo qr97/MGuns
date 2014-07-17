@@ -52,7 +52,7 @@ public class AutoBow implements BowWeapon {
 		Arrow arrow = (Arrow)event.getProjectile();
 		
 		for(Entity entity : player.getNearbyEntities(15, 15, 15)) {
-			if(entity instanceof LivingEntity) {
+			if(entity instanceof LivingEntity && entity != player) {
 				Vector vector = entity.getLocation().toVector().subtract(arrow.getLocation().toVector());
 				arrow.setVelocity(vector);
 				break;

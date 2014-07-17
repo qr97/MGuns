@@ -1,4 +1,4 @@
-package io.github.qr97.mguns.listener;
+package io.github.qr97.mguns.listeners;
 
 import io.github.qr97.mguns.MGuns;
 import io.github.qr97.mguns.weapons.types.BowWeapon;

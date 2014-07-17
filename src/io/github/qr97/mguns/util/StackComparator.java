@@ -12,12 +12,22 @@ public class StackComparator {
 		ItemMeta meta1 = stack1.getItemMeta();
 		ItemMeta meta2 = stack2.getItemMeta();
 		
-		if(meta1.getDisplayName().equals(meta2.getDisplayName())
-				&& meta1.getLore().equals(meta2.getLore())) {
-			return true;
+		if(meta1.hasDisplayName() != meta2.hasDisplayName() || meta1.hasLore() != meta2.hasLore()) {
+			return false;
 		}
 		
-		return false;
+		boolean sameName = true;
+		boolean sameLore = true;
+		
+		if(meta1.hasDisplayName()) {
+			sameName = meta1.getDisplayName().equals(meta2.getDisplayName());
+		}
+		
+		if(meta1.hasLore()) {
+			sameLore = meta1.getLore().equals(meta2.getLore());
+		}
+		
+		return sameName && sameLore;
 		
 	}
 	

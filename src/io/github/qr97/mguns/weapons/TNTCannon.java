@@ -1,5 +1,7 @@
 package io.github.qr97.mguns.weapons;
 
+import io.github.qr97.mguns.weapons.types.ClickWeapon;
+
 import java.util.ArrayList;
 import java.util.List;
 

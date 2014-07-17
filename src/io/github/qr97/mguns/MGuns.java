@@ -1,8 +1,8 @@
 package io.github.qr97.mguns;
 
 import io.github.qr97.mguns.commands.GetWeaponCommand;
-import io.github.qr97.mguns.listener.EntityShootBowListener;
-import io.github.qr97.mguns.listener.PlayerInteractListener;
+import io.github.qr97.mguns.listeners.EntityShootBowListener;
+import io.github.qr97.mguns.listeners.PlayerInteractListener;
 import io.github.qr97.mguns.util.StackComparator;
 import io.github.qr97.mguns.weapons.AutoBow;
 import io.github.qr97.mguns.weapons.TNTCannon;

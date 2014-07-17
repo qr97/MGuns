@@ -1,6 +1,4 @@
-package io.github.qr97.mguns.weapons;
-
-import io.github.qr97.mguns.weapons.types.Weapon;
+package io.github.qr97.mguns.weapons.types;
 
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;

@@ -1,7 +1,7 @@
-package io.github.qr97.mguns.listener;
+package io.github.qr97.mguns.listeners;
 
 import io.github.qr97.mguns.MGuns;
-import io.github.qr97.mguns.weapons.ClickWeapon;
+import io.github.qr97.mguns.weapons.types.ClickWeapon;
 import io.github.qr97.mguns.weapons.types.Weapon;
 
 import org.bukkit.event.EventHandler;
