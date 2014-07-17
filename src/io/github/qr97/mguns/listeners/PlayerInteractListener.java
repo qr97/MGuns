@@ -16,7 +16,7 @@ public class PlayerInteractListener implements Listener {
 		
 		if(weapon != null && weapon instanceof ClickWeapon) {
 			ClickWeapon cWeapon = (ClickWeapon)weapon;
-			cWeapon.onMeleeAttack(event);
+			cWeapon.onClick(event);
 		}
 	}
 	

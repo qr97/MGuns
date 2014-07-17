@@ -40,7 +40,7 @@ public class TNTCannon implements ClickWeapon {
 		return item;
 	}
 
-	public void onMeleeAttack(PlayerInteractEvent event) {
+	public void onClick(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 
 		if (event.getClickedBlock() != null
