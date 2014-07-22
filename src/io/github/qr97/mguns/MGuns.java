@@ -16,12 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class MGuns extends JavaPlugin {
 	
-	private static MGuns instance;
 	private Map<String, Weapon> weaponsList = new HashMap<>();
-	
-	public static MGuns getInstance() {
-		return instance;
-	}
 	
 	public Weapon getWeapon(String name) {
 		return weaponsList.get(name);
@@ -29,14 +24,13 @@ public class MGuns extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-		instance = this;
-		getCommand("getWeapon").setExecutor(new GetWeaponCommand());
-		getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
-		getServer().getPluginManager().registerEvents(new EntityShootBowListener(), this);
+		getCommand("getWeapon").setExecutor(new GetWeaponCommand(this));
+		getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
+		getServer().getPluginManager().registerEvents(new EntityShootBowListener(this), this);
 		registerWeapons(new TNTCannon(), new AutoBow());
 	}
 	
-	public void registerWeapons(Weapon ... weapons) {
+	public void registerWeapons(Weapon... weapons) {
 		for(Weapon weapon : weapons)
 			weaponsList.put(weapon.getName().toLowerCase(), weapon);
 	}

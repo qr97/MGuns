@@ -11,6 +11,12 @@ import org.bukkit.entity.Player;
 
 public class GetWeaponCommand implements CommandExecutor {
 
+	private MGuns plugin;
+	
+	public GetWeaponCommand(MGuns plugin) {
+		this.plugin = plugin;
+	}
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label,
 			String[] args) {
@@ -25,7 +31,7 @@ public class GetWeaponCommand implements CommandExecutor {
 		}
 		
 		Player player = (Player) sender;
-		Weapon weapon = MGuns.getInstance().getWeapon(args[0].toLowerCase());
+		Weapon weapon = plugin.getWeapon(args[0].toLowerCase());
 		
 		if(weapon != null) {
 			player.getInventory().addItem(weapon.getItemStack());
