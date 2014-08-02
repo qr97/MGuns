@@ -2,9 +2,10 @@ name: MGuns
 main: io.github.qr97.mguns.MGuns
 version: 0.1
 commands:
-  getWeapon:
-    description: Recebe a arma especificada
-    usage: Use /<command> <arma>
+  mguns:
+    aliases: mg
+    description: Comando principal
+    usage: Use /<command> <comando>
 permissions:
   mguns.tntcannon:
     description: Uso da arma TNTCannon
