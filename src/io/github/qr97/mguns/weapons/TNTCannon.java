@@ -43,8 +43,7 @@ public class TNTCannon implements ClickWeapon {
 	public void onClick(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 
-		if (event.getClickedBlock() != null
-				|| !player.hasPermission("mguns.tntcannon")) {
+		if (event.getClickedBlock() != null) {
 			event.setCancelled(true);
 			return;
 		}

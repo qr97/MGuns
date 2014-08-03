@@ -8,6 +8,7 @@ import io.github.qr97.mguns.listeners.PlayerInteractListener;
 import io.github.qr97.mguns.util.StackComparator;
 import io.github.qr97.mguns.weapons.AutoBow;
 import io.github.qr97.mguns.weapons.TNTCannon;
+import io.github.qr97.mguns.weapons.TorHammer;
 import io.github.qr97.mguns.weapons.types.Weapon;
 
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -32,7 +34,7 @@ public class MGuns extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
 		getServer().getPluginManager().registerEvents(new EntityShootBowListener(this), this);
 		
-		registerWeapons(new TNTCannon(), new AutoBow());
+		registerWeapons(new TNTCannon(), new AutoBow(), new TorHammer());
 	}
 	
 	public Weapon getWeapon(String name) {
@@ -42,9 +44,11 @@ public class MGuns extends JavaPlugin {
 			return weapon;
 		}
 		
+		String lowerName = name.toLowerCase();
+		
 		for(Entry<String, Weapon> entry : weaponsList.entrySet()) {
-			String weaponName = entry.getKey();
-			if(weaponName.startsWith(name)) {
+			String weaponName = entry.getKey().toLowerCase();
+			if(weaponName.startsWith(lowerName)) {
 				return entry.getValue();
 			}
 		}
@@ -68,9 +72,12 @@ public class MGuns extends JavaPlugin {
 	
 	public void registerWeapons(Weapon... weapons) {
 		for(Weapon weapon : weapons)
-			weaponsList.put(weapon.getName().toLowerCase(), weapon);
+			weaponsList.put(weapon.getName(), weapon);
 	}
 	
+	public boolean canFire(Player player, Weapon weapon) {
+		return player.hasPermission("mguns.use." + weapon.getName().toLowerCase());
+	}
 	
 	private void registerCommands() {
 		cmdManager.registerCommand(new GetCommand(this));

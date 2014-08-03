@@ -20,7 +20,7 @@ public class CommandManager implements CommandExecutor {
 	private MGCommand getCommand(String name) {
 		String lowerName = name.toLowerCase();
 		for(String cmdName : commands.keySet()) {
-			if(cmdName.equals(lowerName)) {
+			if(cmdName.startsWith(lowerName)) {
 				return commands.get(cmdName);
 			}
 		}

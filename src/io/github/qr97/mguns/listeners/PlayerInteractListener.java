@@ -22,7 +22,9 @@ public class PlayerInteractListener implements Listener {
 		
 		if(weapon != null && weapon instanceof ClickWeapon) {
 			ClickWeapon cWeapon = (ClickWeapon)weapon;
-			cWeapon.onClick(event);
+			if(plugin.canFire(event.getPlayer(), cWeapon)) {
+				cWeapon.onClick(event);
+			}
 		}
 	}
 	

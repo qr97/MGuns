@@ -7,6 +7,12 @@ commands:
     description: Comando principal
     usage: Use /<command> <comando>
 permissions:
-  mguns.tntcannon:
+  mguns.use.tntcannon:
     description: Uso da arma TNTCannon
+    default: op
+  mguns.use.autobow:
+    description: Uso da arma AutoBow
+    default: op
+  mguns.use.torhammer:
+    description: Uso da arma TorHammer
     default: op

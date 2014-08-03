@@ -23,8 +23,10 @@ public class EntityShootBowListener implements Listener {
 			Player player = (Player) event.getEntity();
 			Weapon weapon = plugin.getWeapon(player.getItemInHand());
 			if(weapon != null && weapon instanceof BowWeapon) {
-				BowWeapon bWeapon = (BowWeapon) weapon;
-				bWeapon.onShoot(event);
+				if(plugin.canFire(player, weapon)) {
+					BowWeapon bWeapon = (BowWeapon) weapon;
+					bWeapon.onShoot(event);
+				}
 			}
 		}
 	}
