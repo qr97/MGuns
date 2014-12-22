@@ -1,9 +1,12 @@
 package io.github.qr97.mguns.util;
 
+import java.util.List;
+
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class StackComparator {
+public class ItemUtils {
 	
 	public static boolean equals(ItemStack stack1, ItemStack stack2) {
 		if(!stack1.isSimilar(stack2))
@@ -29,6 +32,17 @@ public class StackComparator {
 		
 		return sameName && sameLore;
 		
+	}
+	
+	public static ItemStack createItem(Material material, String displayName, List<String> lore) {
+		ItemStack stack = new ItemStack(material);
+		
+		ItemMeta meta = stack.getItemMeta();
+		meta.setDisplayName(displayName);
+		meta.setLore(lore);
+		
+		stack.setItemMeta(meta);
+		return stack;
 	}
 	
 }

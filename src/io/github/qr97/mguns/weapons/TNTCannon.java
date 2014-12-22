@@ -1,9 +1,9 @@
 package io.github.qr97.mguns.weapons;
 
+import io.github.qr97.mguns.util.ItemUtils;
 import io.github.qr97.mguns.weapons.types.ClickWeapon;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -11,7 +11,6 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class TNTCannon implements ClickWeapon {
 
@@ -19,16 +18,8 @@ public class TNTCannon implements ClickWeapon {
 	private ItemStack item;
 
 	public TNTCannon() {
-		ItemStack tntCannon = new ItemStack(Material.DISPENSER);
-
-		ItemMeta meta = tntCannon.getItemMeta();
-		meta.setDisplayName(ChatColor.DARK_GREEN + "Lançador de TNT");
-		List<String> loreList = new ArrayList<>();
-		loreList.add("Lança TNTs");
-		meta.setLore(loreList);
-		tntCannon.setItemMeta(meta);
-
-		item = tntCannon;
+		item = ItemUtils.createItem(Material.DISPENSER, ChatColor.DARK_GREEN + "Lançador de TNT",
+				Arrays.asList("Lança TNTs"));
 
 	}
 

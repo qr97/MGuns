@@ -5,7 +5,7 @@ import io.github.qr97.mguns.commands.GetCommand;
 import io.github.qr97.mguns.commands.ListCommand;
 import io.github.qr97.mguns.listeners.EntityShootBowListener;
 import io.github.qr97.mguns.listeners.PlayerInteractListener;
-import io.github.qr97.mguns.util.StackComparator;
+import io.github.qr97.mguns.util.ItemUtils;
 import io.github.qr97.mguns.weapons.AutoBow;
 import io.github.qr97.mguns.weapons.TNTCannon;
 import io.github.qr97.mguns.weapons.TorHammer;
@@ -58,7 +58,7 @@ public class MGuns extends JavaPlugin {
 	
 	public Weapon getWeapon(ItemStack stack) {
 		for(Weapon weapon : weaponsList.values()) {
-			if(StackComparator.equals(weapon.getItemStack(), stack)) {
+			if(ItemUtils.equals(weapon.getItemStack(), stack)) {
 				return weapon;
 			}
 		}

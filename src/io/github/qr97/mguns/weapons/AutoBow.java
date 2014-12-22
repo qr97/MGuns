@@ -1,9 +1,9 @@
 package io.github.qr97.mguns.weapons;
 
+import io.github.qr97.mguns.util.ItemUtils;
 import io.github.qr97.mguns.weapons.types.BowWeapon;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -13,7 +13,6 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 public class AutoBow implements BowWeapon {
@@ -22,18 +21,8 @@ public class AutoBow implements BowWeapon {
 	private ItemStack item;
 	
 	public AutoBow() {
-		ItemStack autoBow = new ItemStack(Material.BOW);
-		
-		ItemMeta meta = autoBow.getItemMeta();
-		meta.setDisplayName(ChatColor.BLUE + name);
-		
-		List<String> loreList = new ArrayList<>();
-		loreList.add("Bow with auto aim");
-		meta.setLore(loreList);
-		
-		autoBow.setItemMeta(meta);
-		item = autoBow;
-		
+		item = ItemUtils.createItem(Material.BOW, ChatColor.BLUE + name,
+				Arrays.asList("Bow with auto aim"));
 	}
 	
 	@Override
