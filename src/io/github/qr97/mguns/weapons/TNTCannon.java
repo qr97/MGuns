@@ -3,8 +3,6 @@ package io.github.qr97.mguns.weapons;
 import io.github.qr97.mguns.util.ItemUtils;
 import io.github.qr97.mguns.weapons.types.ClickWeapon;
 
-import java.util.Arrays;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -19,8 +17,7 @@ public class TNTCannon implements ClickWeapon {
 
 	public TNTCannon() {
 		item = ItemUtils.createItem(Material.DISPENSER, ChatColor.DARK_GREEN + "Lançador de TNT",
-				Arrays.asList("Lança TNTs"));
-
+				"Lança TNTs");
 	}
 
 	public String getName() {

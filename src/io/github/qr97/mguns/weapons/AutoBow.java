@@ -3,8 +3,6 @@ package io.github.qr97.mguns.weapons;
 import io.github.qr97.mguns.util.ItemUtils;
 import io.github.qr97.mguns.weapons.types.BowWeapon;
 
-import java.util.Arrays;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
@@ -22,7 +20,7 @@ public class AutoBow implements BowWeapon {
 	
 	public AutoBow() {
 		item = ItemUtils.createItem(Material.BOW, ChatColor.BLUE + name,
-				Arrays.asList("Bow with auto aim"));
+				"Bow with auto aim");
 	}
 	
 	@Override

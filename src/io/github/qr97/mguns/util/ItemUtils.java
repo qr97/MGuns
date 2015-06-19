@@ -1,5 +1,6 @@
 package io.github.qr97.mguns.util;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.bukkit.Material;
@@ -32,6 +33,10 @@ public class ItemUtils {
 		
 		return sameName && sameLore;
 		
+	}
+	
+	public static ItemStack createItem(Material material, String displayName, String lore) {
+		return createItem(material, displayName, Arrays.asList(lore));
 	}
 	
 	public static ItemStack createItem(Material material, String displayName, List<String> lore) {
